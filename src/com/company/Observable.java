@@ -8,28 +8,28 @@ public class Observable implements IObservable {
     private List<Observer> observers=new ArrayList<>();
     private String message;
     private String name;
-    private int score=0;
+//    private int score=0;
 
     public Observable(String name) {
         setName(name);
     }
 
-    public String getName() {
-        return name;
-    }
-
+//    public String getName() {
+//        return name;
+//    }
+//
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-        sendMessage();
-    }
+//
+//    public int getScore() {
+//        return score;
+//    }
+//
+//    public void setScore(int score) {
+//        this.score = score;
+//        sendMessage();
+//    }
 
     @Override
     public void addUser(Observer obj) {
@@ -47,7 +47,7 @@ public class Observable implements IObservable {
     @Override
     public void sendMessage() {
         for (Observer obj : observers) {
-            obj.update(name,score);
+            obj.update(name);
         }
     }
 

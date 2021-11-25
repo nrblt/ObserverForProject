@@ -2,8 +2,19 @@ package com.company;
 
 public class Observer implements IObserver{
     private Observable observable;
-    public Observer(Observable observable){
+    private String name;
+    private String msg;
+    public Observer(Observable observable,String name){
         setObservable(observable);
+        setName(name);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Observable getObservable() {
@@ -15,7 +26,12 @@ public class Observer implements IObserver{
     }
 
     @Override
-    public void update(String name, int score) {
-        System.out.println("Now "+name+" have "+score);
+    public void update(String curUser) {
+//        System.out.println("User "+ name+" won all 3 battles");
+        msg="User "+curUser+" won all 3 battles";
+    }
+
+    public String getMsg() {
+        return msg;
     }
 }
